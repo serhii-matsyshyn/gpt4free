@@ -130,6 +130,8 @@ def get_embedding(input_text, token):
     return embedding
 
 
+@app.route("/engines/text-embedding-ada-002/embeddings", methods=["POST"])
+@app.route("/engines/text-similarity-davinci-001/embeddings", methods=["POST"])
 @app.route("/embeddings", methods=["POST"])
 def embeddings():
     input_text_list = request.get_json().get("input")
